@@ -939,4 +939,6 @@ OXE_STANDARDIZATION_TRANSFORMS = {
     "aloha_place_dual_shoes":aloha_dataset_transform,
     "aloha_place_object_scale":aloha_dataset_transform,
     "aloha_stack_bowls_three_clean_builder":aloha_dataset_transform,
+    # Add aloha_place_bread_basket
+    "aloha_place_bread_basket":aloha_dataset_transform,
 }

@@ -82,7 +82,7 @@ def _generate_examples(paths) -> Iterator[Tuple[str, Any]]:
             yield path, {"steps": steps, "episode_metadata": {"file_path": path}}
 
 
-class aloha_move_can_pot(MultiThreadedDatasetBuilder):
+class aloha_place_a2b_left(MultiThreadedDatasetBuilder):
     VERSION = tfds.core.Version("1.0.0")
     RELEASE_NOTES = {
         "1.0.0": "Initial release for RoboTwin place_object dataset.",
@@ -147,10 +147,10 @@ class aloha_move_can_pot(MultiThreadedDatasetBuilder):
 
     def _split_paths(self):
         train_files = glob.glob(
-            "/home/qdhe/workspace/dda4210/project/dataset/data_preprocessed/move_can_pot/aloha-agilex_clean_50/train/*.hdf5"
+            "/home/qdhe/workspace/dda4210/project/dataset/data_preprocessed/place_a2b_left/aloha-agilex_clean_50/train/*.hdf5"
         )
         val_files = glob.glob(
-            "/home/qdhe/workspace/dda4210/project/dataset/data_preprocessed/move_can_pot/aloha-agilex_clean_50/val/*.hdf5"
+            "/home/qdhe/workspace/dda4210/project/dataset/data_preprocessed/place_a2b_left/aloha-agilex_clean_50/val/*.hdf5"
         )
 
         print(f"[INFO] Found {len(train_files)} training files")
@@ -165,7 +165,7 @@ class aloha_move_can_pot(MultiThreadedDatasetBuilder):
 if __name__ == "__main__":
     tfds_data_dir = "/home/qdhe/workspace/dda4210/project/dataset/tensorflow_datasets"
 
-    builder = aloha_move_can_pot(data_dir=tfds_data_dir)
+    builder = aloha_place_a2b_left(data_dir=tfds_data_dir)
 
     download_config = tfds.download.DownloadConfig(
         try_download_gcs=False,
